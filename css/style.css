@@ -4,6 +4,10 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+.img {
+    background-image: url("img/loading(1).gif");
+}
+
 .main {
     position: relative;
     width: 100vw;
