@@ -8,6 +8,16 @@
     background-image: url("Img/loading (1).gif");
     background-repeat: no-repeat;
     background-size: cover;
+    animation-duration: 5s;
+    animation-name: img;
+    animation-direction: reverse;
+    opacity: 1;
+}
+
+@keyframes img {
+   100% {
+       opacity: 0;
+   }
 }
 
 .main {
