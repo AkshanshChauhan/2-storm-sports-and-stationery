@@ -5,8 +5,7 @@
 }
 
 img {
-    background-image: url("Img/loading (1).gif");
-    transition-duration: 5s;
+    background-image: url("Img/loading.gif");
 }
 
 .main {
