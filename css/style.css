@@ -5,7 +5,9 @@
 }
 
 .img {
-    background-image: url("Img/loading(1).gif");
+    background-image: url("Img/loading (1).gif");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .main {
