@@ -202,8 +202,8 @@ td {
 
     .container2 {
         display: grid;
-        grid-template-columns: auto;
-        gap: 20px;
+        grid-template-columns: auto auto;
+        gap: 10px;
         align-items: center;
         justify-content: center;
     }
