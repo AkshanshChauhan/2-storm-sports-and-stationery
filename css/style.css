@@ -322,4 +322,32 @@ li {
         background-color: rgb(41, 106, 160);
         margin-left: 2rem;
     }
+
+    .message {
+        display: absolute;
+        display: block;
+        animation-name: message;
+        animation-duration: 10s;
+        animation-iteration-count: infinite;
+        background: linear-gradient(10deg, red, orange);
+        background-size: 1000px 1000px;
+        animation-timing-function: ease-in-out;
+    }
+
+    @keyframes message {
+        0% {
+            background-position: 0px 0px;
+        }
+        50% {
+            background-position: 1000px 1000px;
+        }
+        0% {
+            background-position: 0px 0px;
+        }
+    }
+
+    .message p {
+        font-size: x-large;
+        padding: 10px;
+    }
 }
