@@ -254,6 +254,11 @@ li {
     padding: 10px;
 }
 
+.message {
+    display: absolute;
+    display: none;
+}
+
 @media all and (max-width: 768px) {
     .side_menu {
         position: relative;
