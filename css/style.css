@@ -236,6 +236,7 @@ td {
     align-self: flex-start;
     background-color: rgb(41, 106, 160);
     margin-left: 12rem;
+    flex-direction: column;
 }
 
 #show a {
@@ -245,11 +246,6 @@ td {
     padding: 10px;
 }
 
-#show span {
-    font-size: xx-large;
-    color: rgb(1, 158, 22);
-    text-indent: 50%;
-}
 
 li {
     list-style: none;
