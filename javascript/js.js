@@ -17,14 +17,14 @@ function search(value) {
         suggest = li[i].getElementsByTagName("a")[0];
         textvalue = suggest.textContent || suggest.innerText;
         if(textvalue.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "grid";
+            li[i].style.display = "flex";
         } else {
             li[i].style.display = "none";
         }
         if(value == "") {
             sugbox.style.display = "none";
         } else {
-            sugbox.style.display = "grid";
+            sugbox.style.display = "flex";
         }
     }
 }
