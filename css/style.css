@@ -4,15 +4,6 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-img {
-    position: relative;
-    background-image: url(Img/loading.gif);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: black;
-    z-index: 9;
-}
-
 .main {
     position: relative;
     width: 100vw;
@@ -51,7 +42,7 @@ img {
     width: 100vw;
     height: 100vh;
     background-color: aliceblue;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .nevigation_bar {
@@ -131,11 +122,27 @@ td {
 }
 
 .container2 {
+    position: relative;
     display: grid;
     grid-template-columns: auto auto auto auto;
+    grid-template-areas: 'smat smat smat smat';
     padding: 20px;
     gap: 20px;
     justify-content: center;
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(35, 91, 196);
+    border: 5px solid rgb(196, 35, 35);
+}
+
+.container2:nth-child(3) {
+    background-color: rgb(196, 108, 35);
+    border: 5px solid rgb(35, 124, 196);
+    margin-top: 10px;
+}
+
+.container2:nth-child(3) .card {
+    border-left: 5px solid rgb(35, 124, 196);
 }
 
 .card {
@@ -144,11 +151,25 @@ td {
     box-shadow: 0px 0px 5px gray;
     background-color: aliceblue;
     width: 100px;
-    border-left: 5px solid rgb(7, 109, 192);
+    height: 200px;
+    border-left: 5px solid rgb(192, 7, 7);
 }
 
 .card img {
     object-fit: cover;
+    background-image: url("../img/loading.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: loadingimage 1s ease-in-out 0s reverse;
+}
+
+@keyframes loadingimage {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateX(10deg);
+    }
 }
 
 .card:hover {
@@ -156,8 +177,8 @@ td {
 }
 .dashboard {
     position: absolute;
-    width: 85.5vw;
-    height: 90vh;
+    width: calc(100vw - 100px);
+    height: fit-content;
     background-color: antiquewhite;
     display: flex;
     flex-direction: column;
@@ -177,7 +198,67 @@ td {
     font-size: small;
 }
 
-@media all and (max-width: 600px) {
+@keyframes loader {
+    from {
+        display: none;
+    }
+
+    to {
+        display: flex;
+        z-index: 10;
+    }
+}
+
+.container2::before {
+    content: "Sports Material's";
+    background-color: rgb(196, 35, 35);
+    color: aliceblue;
+    justify-self: right;
+    grid-area: smat;
+}
+
+.container2:nth-child(3)::before {
+    content: "Summer Sports";
+    background-color: rgb(35, 124, 196);
+    color: aliceblue;
+    justify-self: right;
+    grid-area: smat;
+}
+
+#show {
+    position: absolute;
+    display: none;
+    grid-template-columns: 300px;
+    width: 260px;
+    height: fit-content;
+    padding: 10px;
+    top: 50px;
+    align-self: flex-start;
+    background-color: rgb(41, 106, 160);
+    margin-left: 12rem;
+}
+
+#show a {
+    width: 220px;
+    background-color: aliceblue;
+    text-align: center;
+    padding: 10px;
+}
+
+#show span {
+    font-size: xx-large;
+    color: rgb(1, 158, 22);
+    text-indent: 50%;
+}
+
+li {
+    list-style: none;
+    width: 300px;
+    height: 50px;
+    padding: 10px;
+}
+
+@media all and (max-width: 768px) {
     .side_menu {
         position: relative;
         background-color: rgb(58, 75, 168);
@@ -202,11 +283,47 @@ td {
         font-size: xx-small;
     }
 
+    .card {
+        padding: 5px;
+        border-radius: 2.5px;
+        box-shadow: 0px 0px 5px gray;
+        background-color: aliceblue;
+        width: 50px;
+        height: 100px;
+        border-left: 5px solid rgb(7, 109, 192);
+    }
+    
+    .card img {
+        object-fit: cover;
+        background-image: url('img/loading.gif');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+    }
+
     .container2 {
         display: grid;
-        grid-template-columns: auto auto;
-        gap: 10px;
+        grid-template-columns: auto auto auto;
+        grid-template-areas: 'smat';
         align-items: center;
         justify-content: center;
+        margin: 0px;
+        padding: 10px 0px 0px 0px;
+        height: calc(100% - 100px);
+        max-height: 100vh;
+    }
+
+    #show {
+        position: absolute;
+        display: none;
+        grid-template-columns: 300px;
+        width: 260px;
+        height: fit-content;
+        padding: 10px;
+        top: 50px;
+        align-self: flex-start;
+        background-color: rgb(41, 106, 160);
+        margin-left: 2rem;
     }
 }
